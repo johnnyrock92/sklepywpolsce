@@ -1,0 +1,24 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<h1>{{ country.country_name }}</h1>
+{% csrf_token %}
+<div class="row">
+    {% for shop in country.shop_set.all %}
+        <div class="col-md-4 col-sm-6" style="background-color:transparent; text-align: center; ">
+            <div style="background-color:white; box-shadow: 0px 0px 50px lightgray; padding:1% 0% 3% 0%; margin:10px;">
+                 <h2>{{ shop.shop_name }}</h2>
+                 <p>
+                    TESTOWY OPIS
+                 </p>
+                 <p><a class="btn btn-default" href="#">TESTOWY PRZYCISK &raquo;</a></p>
+          
+            </div>
+        </div>
+ 
+    {% endfor %}
+</div>
+{% endblock %}
